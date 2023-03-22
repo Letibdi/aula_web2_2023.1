@@ -35,11 +35,9 @@ private $db_charset = "utf8";
  public function select($nome_tabela)
 {
     $conn = $this->conn();
-    
     $sql = "select * from $nome_tabela;";
-    
-  $st = $conn->prepare($sql);
-  $st->execute();
+    $st = $conn->prepare($sql);
+    $st->execute();
 
   return $st->fetchAll(PDO::FETCH_CLASS);
 }
@@ -48,11 +46,8 @@ private $db_charset = "utf8";
 {
     $id = dados['id'];
     $conn = $this->conn();
-    
     $sql = "UPDATE $nome_tabela SET nome = ? telefone = ? WHERE id=$id;";
-    
     $st = $conn->prepare($sql);
-    
     $arrayDados = [ $dados['nome'], $dados['telefone'] ];
     $st->execute($arrayDados);
 }
@@ -61,12 +56,11 @@ private $db_charset = "utf8";
 {
     $conn = $this->conn();
     $sql = "DELETE FROM $nome_tabela WHERE id=$id;";
-    
-  $st = $conn->prepare($sql);
-  $st->execute();
+    $st = $conn->prepare($sql);
+    $st->execute();
 }
 
-  public function buscar($nome_tabela, $dados)
+  public function pesquisar($nome_tabela, $dados)
 {
     $campo = $dados['campo'];
     $valor = $dados['valor'];
@@ -77,6 +71,16 @@ private $db_charset = "utf8";
 
     return $st->fetchAll(PDP::FETCH_CLASS);
 }
+
+    public function buscar($nome_tabela,$id)
+  {
+      $conn = $this->conn();
+      $sql = "SELECT * FROM $nome_tabela WHERE id=$id;";
+      $st = $conn->prepare($sql);
+      $st->execute();
+
+      return $st->fetchObject();
+  }
 
 }
 ?>

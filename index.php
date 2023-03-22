@@ -3,7 +3,7 @@
     <title>PHP Test</title>
   </head>
   <body>
-    <a href="./View/UsuarioForm.php">Cadastrar </a><br>
-    <a href="./View/UsuarioList.php">Listar </a>
+    <a href="./view/UsuarioForm.php">Cadastrar </a><br>
+    <a href="./view/UsuarioList.php">Listar </a>
   </body>
 </html>

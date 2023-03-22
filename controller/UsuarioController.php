@@ -11,7 +11,6 @@ class UsuarioController{
         $this->model = new BD();
     }
     
-    
 
     public function salvar($dados){
         
@@ -22,6 +21,16 @@ class UsuarioController{
     public function carregar(){
 
         return $this->model->select($this->table);
+    }
+
+    public function deletar($id){
+
+        return $this->model->remove($this->table,$id);
+    }
+    
+    public function buscar($id){
+
+        return $this->model->buscar($this->table,$id);
     }
 
 }
