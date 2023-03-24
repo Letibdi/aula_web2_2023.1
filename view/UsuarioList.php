@@ -3,12 +3,20 @@ include "../controller/UsuarioController.php";
 
     $usuario = new UsuarioController();
     $load = $usuario->carregar();
+
     if(!empty($_GET['id'])){
       $usuario->deletar($_GET['id']);
       header("location: UsuarioList.php");
     }
 
-//$conn->inserir("usuario", ["nome"=>"Leticia", "telefone"=>"49 992001273"]);
+    if(!empty($_POST)){
+      $load = $usuario->pesquisar($_POST);
+    }
+
+    else{
+      $load = $usuario->carregar();
+    }
+
 
 
 
@@ -19,6 +27,14 @@ include "../controller/UsuarioController.php";
     <title>PHP Test</title>
   </head>
   <body>
+  <form action="UsuarioList.php" method="post">
+      <select name="campo">
+        <option value="nome">Nome</option>
+        <option value="telefone">Telefone</option>
+      <input type="text" name="valor" />
+      <input type="submit" value="Buscar"/>
+  </form>
+    <a href="UsuarioForm.php">Cadastrar</a>
     <table>
         <tr>
             <th>ID</th>

@@ -11,16 +11,24 @@ class UsuarioController{
         $this->model = new BD();
     }
     
-
     public function salvar($dados){
         
         $this->model->inserir($this->table,$dados);
-
+    }
+    
+    public function update($dados){
+        
+        $this->model->update($this->table,$dados);
     }
 
     public function carregar(){
 
         return $this->model->select($this->table);
+    }
+
+    public function pesquisar($dados){
+
+        return $this->model->pesquisar($this->table, $dados);
     }
 
     public function deletar($id){
