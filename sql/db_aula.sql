@@ -14,27 +14,23 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
-
--- Copiando estrutura do banco de dados para db_aula
-CREATE DATABASE IF NOT EXISTS `db_aula` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `db_aula`;
-
 -- Copiando estrutura para tabela db_aula.usuario
 CREATE TABLE IF NOT EXISTS `usuario` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `nome` varchar(100) COLLATE utf8mb4_bin NOT NULL DEFAULT '0',
-  `telefone` varchar(50) COLLATE utf8mb4_bin NOT NULL DEFAULT '0',
+  `nome` varchar(100) COLLATE utf8mb4_bin DEFAULT NULL,
+  `telefone` varchar(20) COLLATE utf8mb4_bin DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
--- Copiando dados para a tabela db_aula.usuario: ~6 rows (aproximadamente)
+-- Copiando dados para a tabela db_aula.usuario: ~7 rows (aproximadamente)
 INSERT INTO `usuario` (`id`, `nome`, `telefone`) VALUES
-	(1, 'leticia', '123654879'),
-	(3, 'leticia', '1546879512'),
-	(4, 'leticia', '123456987'),
-	(5, 'maria', '1475863522222'),
-	(6, 'julia', ''),
-	(7, 'julinha', '123456789');
+	(1, 'Jackson', '84 98552200'),
+	(2, 'Jackson', '84 98552200'),
+	(3, 'Jackson', '84 98552200'),
+	(4, 'Jackson', '84 98552200'),
+	(5, 'Jackson', '84 98552200'),
+	(7, 'teste1', 'teste'),
+	(8, 'teste', 'teste');
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
