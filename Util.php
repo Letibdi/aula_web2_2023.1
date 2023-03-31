@@ -6,7 +6,7 @@ class Util{
 
         $_SESSION['login'] = $param['login'];
         $_SESSION['senha'] = $param['senha'];
-        $_SESSION['sair'] = 0;
+        header ("Location:main.php");
 
 
         
